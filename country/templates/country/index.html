@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+body{
+background-image:url("https://images.hindustantimes.com/img/2021/07/24/550x309/104ea6bde6404c90933c68da653fd19a-104ea6bde6404c90933c68da653fd19a-0_1627103360277_1627106563954.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+
+}
+    .card{
+    width:100%;
+    box-shadow:0 2px 5px black;
+    background:transparent;
+    margin-bottom:5px;
+    color:white;
+    }
+
+    .container{
+    width:700px;
+    height:400px;
+    display:grid;
+    place-items:center;
+     overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    .makecenter{
+    display:grid;
+    place-items:center;
+    margin-top:50px;
+    }
+
+    .imgarea{
+    width:100%;
+    height:200px;
+    }
+
+h2{
+text-align:center;
+color:white;
+}
+</style>
+<body>
+<!--I am here country-->
+<!--{% load static %}-->
+<!--<img src="{% static 'country/imgs/m3.jpg' %}">-->
+<h2>LIST OF TEAMS ARE HERE </h2>
+<div class="makecenter">
+<div class="container">
+{% for i in countries %}
+<div class="card" >
+  <img  class="imgarea" src="/media/{{i.country_flag}}"  alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Name of the country : {{i.country_name}}</h5>
+    <p class="card-text">Representing : {{i.country_represnt}}</p>
+    <p class="card-text">NO of Teams : {{i.country_noTeams}}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+</body>
+</html>
